@@ -107,6 +107,7 @@ No método list por exemplo, que tem como objetivo listar todas as informações
   }
 ```
 ### Exemplo de uso
+##### HelloWorld.vue
 ```js
 // components/HelloWorld.vue
 import PostService from '@/service/post/PostService'
