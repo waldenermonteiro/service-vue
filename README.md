@@ -111,7 +111,7 @@ Aqui temos as importações do Http e do Response Service, onde o http disponibi
 import { http } from '@/http-utils/Http'
 import { ResponseService } from './ResponseService'
 ``` 
-No construtor do Base, é passado como patrâmetro o endereço do endpoint da API, sendo assim, é possível criar um atributo atribuindo como valor o parâmetro, permitindo ser disponibilizado para qualquer serviço que herdar a classe Base e para os métodos criados na classe. É utilizada a mesma ideia de disponibilização de atributos com as instâncias de http e ResponseService
+No construtor do Base, é passado como parâmetro o endereço do endpoint da API, sendo assim, é possível criar um atributo atribuindo como valor o parâmetro, permitindo ser disponibilizado para qualquer serviço que herdar a classe Base e para os métodos criados na classe. É utilizada a mesma ideia de disponibilização de atributos com as instâncias de http e ResponseService
 ##### Base.js
 ```js
 // services/Base.js
