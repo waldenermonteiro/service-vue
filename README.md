@@ -106,6 +106,27 @@ No método list por exemplo, que tem como objetivo listar todas as informações
     }
   }
 ```
+### Estrutura de um módulo
+
+A estrutura de um módulo específic9 do service-vue baseia-se em entender alguns diretórios como :
+- services
+
+Diferente do que normalmente é utilizado, aqui é utilizado tudo relacionado ao módulo em seu próprio diretório (service, store, view), para que assim, seja mais fácil de encontrar os arquivos do mesmo.
+#### Diretório services
+No diretório services é onde é criado o service específico de um módulo.
+O PostService é um exemplo de criação de um service específico de um módulo.
+##### PostService.js
+```js
+// pages/post/services/PostService.js
+import Base from '@/services/Base'
+class PostService extends Base {
+  constructor() {
+    super('/posts')
+  }
+}
+export default new PostService()
+``` 
+O base é importado, e através do extends,  é herdado para que todos os métodos fiquem disponíveis para o PostService. Com o super, passamos para o construtor do Base o endpoint da API, que no caso é /posts, e exportamos a classe já instanciada.
 ### Exemplo de uso
 ##### HelloWorld.vue
 ```js
