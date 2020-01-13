@@ -1,8 +1,35 @@
+# Service-Vue
+> Arquitetura de services em projetos Vue.
+
+Service vue é uma arquitetura que tem como objetivo a reutilização de services  e métodos em diferentes ocasiões, diminuindo a complexidade aos acessos a recursos HTTP.
+
+![](../header.png)
+
+## Instalação
+
+```sh
+npm install
+```
+## Execução
+
+```sh
+npm run serve
+```
+## Compilação e minificação para a produção
+
+```sh
+npm run build
+```
+## Execução de testes
+
+```sh
+npm run test
+```
 ## Entendendo a arquitetura service-vue
 
 Para entender a arquitetura service-vue, é necessário ter em mente como funciona o padrão repository. 
 O padrão repository nada mais é que abstrações de objetos ou entidades de um determinado domínio que acessam uma API ou banco de dados. Ele é fortemente vinculado ao domínio da aplicação e este é um reflexo direto das regras de negócio, pois ele abstrai armazenamento e consulta de um ou mais entidades do domínio.
-Em nossa arquitetura, pelo fato de ser um projeto FRONT-END, não será necessário o uso de entidades, apenas os repositorys que serão nomeados como services.
+Nesta arquitetura, pelo fato de ser um projeto FRONT-END, não será necessário o uso de entidades, apenas os repositorys que serão nomeados como services.
 
 ### Estrutura Global
 
@@ -12,13 +39,14 @@ A estrutura global do service-vue baseia-se em entender alguns diretórios como 
 
 #### Diretório http-utils
 
-No diretório http-service, existe um arquivo chamado Http.js, onde nele é feita toda a configuração do axios (lib de requisições HTTP), como por exemplo : a baseURL da API, os interceptors, o token caso seja necessário, entre outras configurações.
+No diretório http-utils, existe um arquivo chamado Http.js, onde nele é feita toda a configuração do axios (lib de requisições HTTP), como por exemplo : a baseURL da API, os interceptors, o token caso seja necessário, entre outras configurações.
 
 #### Diretório services
 
 No diretório services, existem dois arquivos, Base.js e ResponseService.js.
 
-No arquivo Base.js, é onde é feita toda a abstração dos métodos que serão mais utilizados na aplicação, como por exemplo, o CRUD.
+No arquivo Base.js, é onde é feita toda a abstração dos métodos que serão mais utilizados na aplicação, como por exemplo, o métodos de CRUD.
+
 ##### Base.js
 ```js
 // services/Base.js
@@ -76,7 +104,7 @@ export default class Base {
 }
 
 ```
-Aqui temos as importações do Http e do Response Service( que veremos mais pra frente), onde o http disponibiliza os métodos básicos para acesso as requisições HTTP (get, post, put, delete, etc.) e o ResponseService controla a resposta da requisição, de acordo como status retornado pela mesma.
+Aqui temos as importações do Http e do Response Service, onde o http disponibiliza os métodos básicos para acesso as requisições HTTP (get, post, put, delete, etc.) e o ResponseService controla as respostas da requisição, de acordo como status retornado pela mesma.
 ##### Base.js
 ```js
 // services/Base.js
@@ -108,13 +136,17 @@ No método list por exemplo, que tem como objetivo listar todas as informações
 ```
 ### Estrutura de um módulo
 
-A estrutura de um módulo específic9 do service-vue baseia-se em entender alguns diretórios como :
+A estrutura de um módulo específico do service-vue baseia-se em entender alguns diretórios como :
+
 - services
 
-Diferente do que normalmente é utilizado, aqui é utilizado tudo relacionado ao módulo em seu próprio diretório (service, store, view), para que assim, seja mais fácil de encontrar os arquivos do mesmo.
+Diferente do que normalmente é utilizado, tudo relacionado ao módulo será criado em seu próprio diretório (service, store, view), para que assim, seja mais fácil a visualização e utilização destes artefatos.
+
 #### Diretório services
-No diretório services é onde é criado o service específico de um módulo.
+
+No diretório services, é criado o service específico de um módulo.
 O PostService é um exemplo de criação de um service específico de um módulo.
+
 ##### PostService.js
 ```js
 // pages/post/services/PostService.js
@@ -126,7 +158,7 @@ class PostService extends Base {
 }
 export default new PostService()
 ``` 
-O base é importado, e através do extends,  é herdado para que todos os métodos fiquem disponíveis para o PostService. Com o super, passamos para o construtor do Base o endpoint da API, que no caso é /posts, e exportamos a classe já instanciada.
+O base é importado e através do extends, é herdado para que todos os métodos fiquem disponíveis para o PostService. Com o super, passamos para o construtor do Base o endpoint da API, que no caso é /posts, e exportamos a classe já instanciada.
 ### Exemplo de uso
 ##### HelloWorld.vue
 ```js
@@ -150,3 +182,20 @@ export default {
 }
 
 ```
+## Autores
+
+- Iago Cavalcante - iago@gmail.com
+- Waldener Monteiro – jjrr019@gmail.com
+
+## Contribua
+
+1. Faça o _fork_ do projeto (<https://github.com/waldenermonteiro/service-vue.git/fork>)
+2. Crie uma _branch_ para sua modificação (`git checkout -b feature/fooBar`)
+3. Faça o _commit_ (`git commit -am 'Add some fooBar'`)
+4. _Push_ (`git push origin feature/fooBar`)
+5. Crie um novo _Pull Request_
+
+## Licença
+
+Distribuído sob a licença MIT.
+
