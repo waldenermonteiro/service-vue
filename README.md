@@ -3,7 +3,7 @@
 
 Service vue é uma arquitetura que tem como objetivo a reutilização de services  e métodos em diferentes ocasiões, diminuindo a complexidade aos acessos a recursos HTTP.
 
-![](../header.png)
+![](https://www.webdatarocks.com/wd_uploads/2019/10/VueTools-3.png)
 
 ## Instalação
 
