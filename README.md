@@ -1,12 +1,12 @@
-## Entendendo a arquitetura service-mixin
+## Entendendo a arquitetura service-vue
 
-Para entender a arquitetura service-mixin, é necessário ter em mente como funciona o padrão repository. 
+Para entender a arquitetura service-vue, é necessário ter em mente como funciona o padrão repository. 
 O padrão repository nada mais é que abstrações de objetos ou entidades de um determinado domínio que acessam uma API ou banco de dados. Ele é fortemente vinculado ao domínio da aplicação e este é um reflexo direto das regras de negócio, pois ele abstrai armazenamento e consulta de um ou mais entidades do domínio.
 Em nossa arquitetura, pelo fato de ser um projeto FRONT-END, não será necessário o uso de entidades, apenas os repositorys que serão nomeados como services.
 
 ### Estrutura Global
 
-A estrutura global do service-mixin baseia-se em entender alguns diretórios como :
+A estrutura global do service-vue baseia-se em entender alguns diretórios como :
 - http-utils
 - services
 
