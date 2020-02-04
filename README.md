@@ -184,7 +184,7 @@ export default {
 ```
 ## Autores
 
-- Iago Cavalcante - iago@gmail.com
+- Iago Cavalcante - iagoangelimc@gmail.com
 - Waldener Monteiro – jjrr019@gmail.com
 
 ## Contribua
