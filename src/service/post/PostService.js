@@ -1,8 +1,9 @@
-import Api from '@/service/Api'
+import Api from "@/service/Api";
 // import { ResponseService } from '@/service/ResponseService'
 
-export default class PostService extends Api {
-  constructor () {
-    super('/posts')
+class PostService extends Api {
+  constructor() {
+    super("/posts");
   }
 }
+export default new PostService();
