@@ -167,7 +167,6 @@ import PostService from '@/service/post/PostService'
 export default {
   name: 'HelloWorld',
   data: () => ({
-    PostService: new PostService(),
     posts: []
   }),
   mounted () {
@@ -175,7 +174,7 @@ export default {
   },
   methods: {
     async getPosts () {
-     const {data} = await this.PostService.list()
+     const {data} = await PostService.list()
      this.posts = data
     }
   }
